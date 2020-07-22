@@ -35,8 +35,9 @@ var Qnscale = /** @class */ (function (_super) {
     function Qnscale() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Qnscale.prototype.coolMethod = function (arg0) { return cordova(this, "coolMethod", {}, arguments); };
-    Qnscale.prototype.connectQnscale = function (height, gender, year, month, day) { return cordova(this, "connectQnscale", {}, arguments); };
+    Qnscale.prototype.connect = function (deviceId, userId, height, gender, year, month, day) { return cordova(this, "connect", {}, arguments); };
+    Qnscale.prototype.syncData = function () { return cordova(this, "syncData", {}, arguments); };
+    Qnscale.prototype.disconnect = function () { return cordova(this, "disconnect", {}, arguments); };
     Qnscale.pluginName = "qnscale";
     Qnscale.plugin = "cordova-plugin-qnscale";
     Qnscale.pluginRef = "cordova.plugins.qnscale";

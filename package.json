@@ -4,21 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/navelist89/ionic-native-qnscale.git"
+    "url": "git+https://github.com/autochek/ionic-native-qnscale.git"
   },
   "keywords": [
     "qnscale",
     "cordova",
     "ionic"
   ],
-  "author": "navelist89",
+  "author": "autochek",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/navelist89/ionic-native-qnscale/issues"
+    "url": "https://github.com/autochek/ionic-native-qnscale/issues"
   },
-  "homepage": "https://github.com/navelist89/ionic-native-qnscale#readme"
+  "homepage": "https://github.com/autochek/ionic-native-qnscale#readme"
 }
