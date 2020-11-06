@@ -35,7 +35,7 @@ var Qnscale = /** @class */ (function (_super) {
     function Qnscale() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Qnscale.prototype.connect = function (deviceId, userId, height, gender, year, month, day) { return cordova(this, "connect", {}, arguments); };
+    Qnscale.prototype.connect = function (deviceId, connectionTimeoutSec, userId, height, gender, year, month, day) { return cordova(this, "connect", {}, arguments); };
     Qnscale.prototype.syncData = function () { return cordova(this, "syncData", {}, arguments); };
     Qnscale.prototype.disconnect = function () { return cordova(this, "disconnect", {}, arguments); };
     Qnscale.pluginName = "qnscale";
