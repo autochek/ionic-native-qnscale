@@ -21,7 +21,7 @@ import { IonicNativePlugin } from '@ionic-native/core';
  * ```
  */
 export declare class QnscaleOriginal extends IonicNativePlugin {
-    connect(deviceId: string, connectionTimeoutSec: number, userId: string, height: number, gender: 'male' | 'female', year: number, month: number, day: number): Promise<any>;
+    connect(deviceId: string, connectionTimeoutSec: number, userId: string, height: number, gender: 'male' | 'female', birthDate: string): Promise<any>;
     syncData(): Promise<any>;
     disconnect(): Promise<any>;
 }
