@@ -1,27 +1,33 @@
 import { IonicNativePlugin } from '@ionic-native/core';
+import { Observable } from 'rxjs';
+export declare class AprilisDeviceQnscale extends IonicNativePlugin {
+    /**
+     * 장치와 연결한다.
+     * @param deviceId 장치 아이디 (안드로이드 : 맥주소, ios : uuid)
+     * @param connectionTimeoutSec 연결 타임아웃 시간 (초)
+     * @param userId 사용자 아이디
+     * @param gender 성별
+     * @param year 생년
+     * @param month 월
+     * @param day 일
+     * @param height 키
+     */
+    connect(deviceId: string, connectionTimeoutSec: number, userId: string, gender: 'male' | 'female', year: number, month: number): Promise<string>;
+    /**
+     * 장치와 데이터를 동기화 한다.
+     */
+    syncData(): Observable<string>;
+    /**
+     * 장치와의 연결을 해제한다.
+     * @param deviceId 장치 아이디 (안드로이드 : 맥주소, ios : uuid)
+     */
+    disconnect(): Promise<string>;
+}
 /**
- * @name qnscale
- * @description
- * This plugin does something
- *
- * @usage
- * ```typescript
- * import { foodlens } from '@ionic-native/foodlens';
- *
- *
- * constructor(private foodlens: foodlens) { }
- *
- * ...
- *
- *
- * this.foodlens.functionName('Hello', 123)
- *   .then((res: any) => console.log(res))
- *   .catch((error: any) => console.error(error));
- *
- * ```
+ * 응답 클래스
  */
-export declare class Qnscale extends IonicNativePlugin {
-    connect(deviceId: string, connectionTimeoutSec: number, userId: string, height: number, gender: 'male' | 'female', birthDate: string): Promise<any>;
-    syncData(): Promise<any>;
-    disconnect(): Promise<any>;
+export declare class AprilisDeviceQnscaleResponse {
+    result: boolean;
+    message: string;
+    data: any;
 }

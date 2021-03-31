@@ -12,6 +12,8 @@
     "url": "git+https://github.com/autochek/ionic-native-qnscale.git"
   },
   "keywords": [
+		"qnscale",
+    "device",
     "qnscale",
     "cordova",
     "ionic"

@@ -11,44 +11,30 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-/**
- * This is a template for new plugin wrappers
- *
- * TODO:
- * - Add/Change information below
- * - Document usage (importing, executing main functionality)
- * - Remove any imports that you are not using
- * - Remove all the comments included in this template, EXCEPT the @Plugin wrapper docs and any other docs you added
- * - Remove this note
- *
- */
-import { Injectable } from '@angular/core';
 import { IonicNativePlugin, cordova } from '@ionic-native/core';
-var Qnscale = /** @class */ (function (_super) {
-    __extends(Qnscale, _super);
-    function Qnscale() {
+import { Observable } from 'rxjs';
+var AprilisDeviceQnscale = /** @class */ (function (_super) {
+    __extends(AprilisDeviceQnscale, _super);
+    function AprilisDeviceQnscale() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Qnscale.prototype.connect = function (deviceId, connectionTimeoutSec, userId, height, gender, birthDate) { return cordova(this, "connect", {}, arguments); };
-    Qnscale.prototype.syncData = function () { return cordova(this, "syncData", {}, arguments); };
-    Qnscale.prototype.disconnect = function () { return cordova(this, "disconnect", {}, arguments); };
-    Qnscale.pluginName = "qnscale";
-    Qnscale.plugin = "cordova-plugin-qnscale";
-    Qnscale.pluginRef = "cordova.plugins.qnscale";
-    Qnscale.repo = "";
-    Qnscale.install = "";
-    Qnscale.installVariables = [];
-    Qnscale.platforms = ["Android", "iOS"];
-    Qnscale = __decorate([
-        Injectable()
-    ], Qnscale);
-    return Qnscale;
+    AprilisDeviceQnscale.prototype.connect = function (deviceId, connectionTimeoutSec, userId, gender, year, month) { return cordova(this, "connect", {}, arguments); };
+    AprilisDeviceQnscale.prototype.syncData = function () { return cordova(this, "syncData", { "observable": true }, arguments); };
+    AprilisDeviceQnscale.prototype.disconnect = function () { return cordova(this, "disconnect", {}, arguments); };
+    AprilisDeviceQnscale.pluginName = "cordova-plugin-aprilis-device-qnscale";
+    AprilisDeviceQnscale.plugin = "cordova-plugin-aprilis-device-qnscale";
+    AprilisDeviceQnscale.pluginRef = "cordova.plugins.aprilis.device.qnscale";
+    AprilisDeviceQnscale.repo = "";
+    AprilisDeviceQnscale.install = "";
+    AprilisDeviceQnscale.installVariables = [];
+    AprilisDeviceQnscale.platforms = ["Android", "iOS"];
+    return AprilisDeviceQnscale;
 }(IonicNativePlugin));
-export { Qnscale };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9zcmMvQGlvbmljLW5hdGl2ZS9wbHVnaW5zL3Fuc2NhbGUvbmd4L2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7Ozs7Ozs7OztHQVVHO0FBQ0gsT0FBTyxFQUFFLFVBQVUsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUMzQyxPQUFPLDhCQUEwRixNQUFNLG9CQUFvQixDQUFDOztJQWtDL0YsMkJBQWlCOzs7O0lBRzVDLDRCQUFVLGFBQUMsSUFBVztJQUt0QixnQ0FBYyxhQUFDLE1BQWEsRUFBRSxNQUFzQixFQUFFLElBQVcsRUFBRSxLQUFZLEVBQUUsR0FBVTs7Ozs7Ozs7SUFSaEYsT0FBTztRQURuQixVQUFVLEVBQUU7T0FDQSxPQUFPO2tCQTlDcEI7RUE4QzZCLGlCQUFpQjtTQUFqQyxPQUFPIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBUaGlzIGlzIGEgdGVtcGxhdGUgZm9yIG5ldyBwbHVnaW4gd3JhcHBlcnNcbiAqXG4gKiBUT0RPOlxuICogLSBBZGQvQ2hhbmdlIGluZm9ybWF0aW9uIGJlbG93XG4gKiAtIERvY3VtZW50IHVzYWdlIChpbXBvcnRpbmcsIGV4ZWN1dGluZyBtYWluIGZ1bmN0aW9uYWxpdHkpXG4gKiAtIFJlbW92ZSBhbnkgaW1wb3J0cyB0aGF0IHlvdSBhcmUgbm90IHVzaW5nXG4gKiAtIFJlbW92ZSBhbGwgdGhlIGNvbW1lbnRzIGluY2x1ZGVkIGluIHRoaXMgdGVtcGxhdGUsIEVYQ0VQVCB0aGUgQFBsdWdpbiB3cmFwcGVyIGRvY3MgYW5kIGFueSBvdGhlciBkb2NzIHlvdSBhZGRlZFxuICogLSBSZW1vdmUgdGhpcyBub3RlXG4gKlxuICovXG5pbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBQbHVnaW4sIENvcmRvdmEsIENvcmRvdmFQcm9wZXJ0eSwgQ29yZG92YUluc3RhbmNlLCBJbnN0YW5jZVByb3BlcnR5LCBJb25pY05hdGl2ZVBsdWdpbiB9IGZyb20gJ0Bpb25pYy1uYXRpdmUvY29yZSc7XG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAncnhqcyc7XG5cbi8qKlxuICogQG5hbWUgcW5zY2FsZVxuICogQGRlc2NyaXB0aW9uXG4gKiBUaGlzIHBsdWdpbiBkb2VzIHNvbWV0aGluZ1xuICpcbiAqIEB1c2FnZVxuICogYGBgdHlwZXNjcmlwdFxuICogaW1wb3J0IHsgZm9vZGxlbnMgfSBmcm9tICdAaW9uaWMtbmF0aXZlL2Zvb2RsZW5zJztcbiAqXG4gKlxuICogY29uc3RydWN0b3IocHJpdmF0ZSBmb29kbGVuczogZm9vZGxlbnMpIHsgfVxuICpcbiAqIC4uLlxuICpcbiAqXG4gKiB0aGlzLmZvb2RsZW5zLmZ1bmN0aW9uTmFtZSgnSGVsbG8nLCAxMjMpXG4gKiAgIC50aGVuKChyZXM6IGFueSkgPT4gY29uc29sZS5sb2cocmVzKSlcbiAqICAgLmNhdGNoKChlcnJvcjogYW55KSA9PiBjb25zb2xlLmVycm9yKGVycm9yKSk7XG4gKlxuICogYGBgXG4gKi9cbkBQbHVnaW4oe1xuICBwbHVnaW5OYW1lOiAncW5zY2FsZScsXG4gIHBsdWdpbjogJ2NvcmRvdmEtcGx1Z2luLXFuc2NhbGUnLCAvLyBucG0gcGFja2FnZSBuYW1lLCBleGFtcGxlOiBjb3Jkb3ZhLXBsdWdpbi1jYW1lcmFcbiAgcGx1Z2luUmVmOiAnY29yZG92YS5wbHVnaW5zLnFuc2NhbGUnLCAvLyB0aGUgdmFyaWFibGUgcmVmZXJlbmNlIHRvIGNhbGwgdGhlIHBsdWdpbiwgZXhhbXBsZTogbmF2aWdhdG9yLmdlb2xvY2F0aW9uXG4gIHJlcG86ICcnLCAvLyB0aGUgZ2l0aHViIHJlcG9zaXRvcnkgVVJMIGZvciB0aGUgcGx1Z2luXG4gIGluc3RhbGw6ICcnLCAvLyBPUFRJT05BTCBpbnN0YWxsIGNvbW1hbmQsIGluIGNhc2UgdGhlIHBsdWdpbiByZXF1aXJlcyB2YXJpYWJsZXNcbiAgaW5zdGFsbFZhcmlhYmxlczogW10sIC8vIE9QVElPTkFMIHRoZSBwbHVnaW4gcmVxdWlyZXMgdmFyaWFibGVzXG4gIHBsYXRmb3JtczogWydBbmRyb2lkJywnaU9TJ10gLy8gQXJyYXkgb2YgcGxhdGZvcm1zIHN1cHBvcnRlZCwgZXhhbXBsZTogWydBbmRyb2lkJywgJ2lPUyddXG59KVxuQEluamVjdGFibGUoKVxuZXhwb3J0IGNsYXNzIFFuc2NhbGUgZXh0ZW5kcyBJb25pY05hdGl2ZVBsdWdpbiB7XG5cbiAgQENvcmRvdmEoKVxuICBjb29sTWV0aG9kKGFyZzA6c3RyaW5nKTogUHJvbWlzZTxhbnk+IHtcbiAgICByZXR1cm47IC8vIFdlIGFkZCByZXR1cm47IGhlcmUgdG8gYXZvaWQgYW55IElERSAvIENvbXBpbGVyIGVycm9yc1xuICB9XG5cbiAgQENvcmRvdmEoKVxuICBjb25uZWN0UW5zY2FsZShoZWlnaHQ6bnVtYmVyLCBnZW5kZXI6J21hbGUnfCdmZW1hbGUnLCB5ZWFyOm51bWJlciwgbW9udGg6bnVtYmVyLCBkYXk6bnVtYmVyKTogUHJvbWlzZTxhbnk+IHtcbiAgICByZXR1cm47IC8vIFdlIGFkZCByZXR1cm47IGhlcmUgdG8gYXZvaWQgYW55IElERSAvIENvbXBpbGVyIGVycm9yc1xuICB9XG5cbn1cbiJdfQ==
+export { AprilisDeviceQnscale };
+var AprilisDeviceQnscaleResponse = /** @class */ (function () {
+    function AprilisDeviceQnscaleResponse() {
+    }
+    return AprilisDeviceQnscaleResponse;
+}());
+export { AprilisDeviceQnscaleResponse };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvQGlvbmljLW5hdGl2ZS9wbHVnaW5zL2FwcmlsaXMtZGV2aWNlLXFuc2NhbGUvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7OztBQVlBLE9BQU8sOEJBQXNDLE1BQU0sb0JBQW9CLENBQUM7QUFDeEUsT0FBTyxFQUFFLFVBQVUsRUFBRSxNQUFNLE1BQU0sQ0FBQzs7SUFZUSx3Q0FBaUI7Ozs7SUFjekQsc0NBQU8sYUFDTCxRQUFnQixFQUNoQixvQkFBNEIsRUFDNUIsTUFBYyxFQUNkLE1BQXlCLEVBQ3pCLElBQVksRUFDWixLQUFhO0lBV2YsdUNBQVE7SUFTUix5Q0FBVTs7Ozs7Ozs7K0JBakVaO0VBeUIwQyxpQkFBaUI7U0FBOUMsb0JBQW9COzs7O3VDQXpCakMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFRoaXMgaXMgYSB0ZW1wbGF0ZSBmb3IgbmV3IHBsdWdpbiB3cmFwcGVyc1xuICpcbiAqIFRPRE86XG4gKiAtIEFkZC9DaGFuZ2UgaW5mb3JtYXRpb24gYmVsb3dcbiAqIC0gRG9jdW1lbnQgdXNhZ2UgKGltcG9ydGluZywgZXhlY3V0aW5nIG1haW4gZnVuY3Rpb25hbGl0eSlcbiAqIC0gUmVtb3ZlIGFueSBpbXBvcnRzIHRoYXQgeW91IGFyZSBub3QgdXNpbmdcbiAqIC0gUmVtb3ZlIGFsbCB0aGUgY29tbWVudHMgaW5jbHVkZWQgaW4gdGhpcyB0ZW1wbGF0ZSwgRVhDRVBUIHRoZSBAUGx1Z2luIHdyYXBwZXIgZG9jcyBhbmQgYW55IG90aGVyIGRvY3MgeW91IGFkZGVkXG4gKiAtIFJlbW92ZSB0aGlzIG5vdGVcbiAqXG4gKi9cbmltcG9ydCB7IEluamVjdGFibGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IFBsdWdpbiwgQ29yZG92YSwgSW9uaWNOYXRpdmVQbHVnaW4gfSBmcm9tICdAaW9uaWMtbmF0aXZlL2NvcmUnO1xuaW1wb3J0IHsgT2JzZXJ2YWJsZSB9IGZyb20gJ3J4anMnO1xuXG5AUGx1Z2luKHtcbiAgcGx1Z2luTmFtZTogJ2NvcmRvdmEtcGx1Z2luLWFwcmlsaXMtZGV2aWNlLXFuc2NhbGUnLFxuICBwbHVnaW46ICdjb3Jkb3ZhLXBsdWdpbi1hcHJpbGlzLWRldmljZS1xbnNjYWxlJyxcbiAgcGx1Z2luUmVmOiAnY29yZG92YS5wbHVnaW5zLmFwcmlsaXMuZGV2aWNlLnFuc2NhbGUnLFxuICByZXBvOiAnJywgLy8gdGhlIGdpdGh1YiByZXBvc2l0b3J5IFVSTCBmb3IgdGhlIHBsdWdpblxuICBpbnN0YWxsOiAnJywgLy8gT1BUSU9OQUwgaW5zdGFsbCBjb21tYW5kLCBpbiBjYXNlIHRoZSBwbHVnaW4gcmVxdWlyZXMgdmFyaWFibGVzXG4gIGluc3RhbGxWYXJpYWJsZXM6IFtdLCAvLyBPUFRJT05BTCB0aGUgcGx1Z2luIHJlcXVpcmVzIHZhcmlhYmxlc1xuICBwbGF0Zm9ybXM6IFsnQW5kcm9pZCcsICdpT1MnXSxcbn0pXG5ASW5qZWN0YWJsZSgpXG5leHBvcnQgY2xhc3MgQXByaWxpc0RldmljZVFuc2NhbGUgZXh0ZW5kcyBJb25pY05hdGl2ZVBsdWdpbiB7XG5cbiAgLyoqXG4gICAqIOyepey5mOyZgCDsl7DqsrDtlZzri6QuXG4gICAqIEBwYXJhbSBkZXZpY2VJZCDsnqXsuZgg7JWE7J2065SUICjslYjrk5zroZzsnbTrk5wgOiDrp6Xso7zshowsIGlvcyA6IHV1aWQpXG4gICAqIEBwYXJhbSBjb25uZWN0aW9uVGltZW91dFNlYyDsl7DqsrAg7YOA7J6E7JWE7JuDIOyLnOqwhCAo7LSIKVxuICAgKiBAcGFyYW0gdXNlcklkIOyCrOyaqeyekCDslYTsnbTrlJRcbiAgICogQHBhcmFtIGdlbmRlciDshLHrs4RcbiAgICogQHBhcmFtIHllYXIg7IOd64WEXG4gICAqIEBwYXJhbSBtb250aCDsm5RcbiAgICogQHBhcmFtIGRheSDsnbxcbiAgICogQHBhcmFtIGhlaWdodCDtgqRcbiAgICovXG4gIEBDb3Jkb3ZhKClcbiAgY29ubmVjdChcbiAgICBkZXZpY2VJZDogc3RyaW5nLFxuICAgIGNvbm5lY3Rpb25UaW1lb3V0U2VjOiBudW1iZXIsXG4gICAgdXNlcklkOiBzdHJpbmcsXG4gICAgZ2VuZGVyOiAnbWFsZScgfCAnZmVtYWxlJyxcbiAgICB5ZWFyOiBudW1iZXIsXG4gICAgbW9udGg6IG51bWJlcixcbiAgKTogUHJvbWlzZTxzdHJpbmc+IHtcbiAgICByZXR1cm47IC8vIFdlIGFkZCByZXR1cm47IGhlcmUgdG8gYXZvaWQgYW55IElERSAvIENvbXBpbGVyIGVycm9yc1xuICB9XG5cbiAgLyoqXG4gICAqIOyepey5mOyZgCDrjbDsnbTthLDrpbwg64+Z6riw7ZmUIO2VnOuLpC5cbiAgICovXG4gIEBDb3Jkb3ZhKHtcbiAgICBvYnNlcnZhYmxlOiB0cnVlLFxuICB9KVxuICBzeW5jRGF0YSgpOiBPYnNlcnZhYmxlPHN0cmluZz4ge1xuICAgIHJldHVybjsgLy8gV2UgYWRkIHJldHVybjsgaGVyZSB0byBhdm9pZCBhbnkgSURFIC8gQ29tcGlsZXIgZXJyb3JzXG4gIH1cblxuICAvKipcbiAgICog7J6l7LmY7JmA7J2YIOyXsOqysOydhCDtlbTsoJztlZzri6QuXG4gICAqIEBwYXJhbSBkZXZpY2VJZCDsnqXsuZgg7JWE7J2065SUICjslYjrk5zroZzsnbTrk5wgOiDrp6Xso7zshowsIGlvcyA6IHV1aWQpXG4gICAqL1xuICBAQ29yZG92YSgpXG4gIGRpc2Nvbm5lY3QoKTogUHJvbWlzZTxzdHJpbmc+IHtcbiAgICByZXR1cm47IC8vIFdlIGFkZCByZXR1cm47IGhlcmUgdG8gYXZvaWQgYW55IElERSAvIENvbXBpbGVyIGVycm9yc1xuICB9XG59XG5cbi8qKlxuICog7J2R64u1IO2BtOuemOyKpFxuICovXG5leHBvcnQgY2xhc3MgQXByaWxpc0RldmljZVFuc2NhbGVSZXNwb25zZSB7XG4gIHJlc3VsdDogYm9vbGVhbjtcbiAgbWVzc2FnZTogc3RyaW5nO1xuICBkYXRhOiBhbnk7XG59XG4iXX0=
