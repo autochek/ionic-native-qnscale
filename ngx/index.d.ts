@@ -1,5 +1,4 @@
 import { IonicNativePlugin } from '@ionic-native/core';
-import { Observable } from 'rxjs';
 export declare class AprilisDeviceQnscale extends IonicNativePlugin {
     /**
      * 장치와 연결한다.
@@ -14,7 +13,7 @@ export declare class AprilisDeviceQnscale extends IonicNativePlugin {
     /**
      * 장치와 데이터를 동기화 한다.
      */
-    syncData(): Observable<string>;
+    syncData(): Promise<string>;
     /**
      * 장치와의 연결을 해제한다.
      * @param deviceId 장치 아이디 (안드로이드 : 맥주소, ios : uuid)
