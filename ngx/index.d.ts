@@ -8,11 +8,9 @@ export declare class AprilisDeviceQnscale extends IonicNativePlugin {
      * @param userId 사용자 아이디
      * @param gender 성별
      * @param year 생년
-     * @param month 월
-     * @param day 일
      * @param height 키
      */
-    connect(deviceId: string, connectionTimeoutSec: number, userId: string, gender: 'male' | 'female', year: number, month: number): Promise<string>;
+    connect(deviceId: string, connectionTimeoutSec: number, userId: string, gender: 'male' | 'female', year: number, height: number): Promise<string>;
     /**
      * 장치와 데이터를 동기화 한다.
      */
