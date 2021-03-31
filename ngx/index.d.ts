@@ -16,7 +16,6 @@ export declare class AprilisDeviceQnscale extends IonicNativePlugin {
     syncData(): Promise<string>;
     /**
      * 장치와의 연결을 해제한다.
-     * @param deviceId 장치 아이디 (안드로이드 : 맥주소, ios : uuid)
      */
     disconnect(): Promise<string>;
 }
